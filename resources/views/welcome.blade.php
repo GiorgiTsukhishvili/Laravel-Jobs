@@ -1,22 +1,49 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-@vite('resources/css/app.css')
+<x-layout>
    
-    </head>
-    <body class=''>
-      
+       <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+
       @foreach ($listings as $listing)
-          <div>
-<h1>{{$listing->title}}</h1>
-          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded p-6">
+                    <div class="flex">
+                        <img
+                            class="hidden w-48 mr-6 md:block"
+                            src="/images/acme.png"
+                            alt=""
+                        />
+                        <div>
+                            <h3 class="text-2xl">
+                                <a href="show.html">Senior Laravel Developer</a>
+                            </h3>
+                            <div class="text-xl font-bold mb-4">Acme Corp</div>
+                            <ul class="flex">
+                                <li
+                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                                >
+                                    <a href="#">Laravel</a>
+                                </li>
+                                <li
+                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                                >
+                                    <a href="#">API</a>
+                                </li>
+                                <li
+                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                                >
+                                    <a href="#">Backend</a>
+                                </li>
+                                <li
+                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                                >
+                                    <a href="#">Vue</a>
+                                </li>
+                            </ul>
+                            <div class="text-lg mt-4">
+                                <i class="fa-solid fa-location-dot"></i> Boston,
+                                MA
+                            </div>
+                        </div>
+                    </div>
+                </div>
       @endforeach
-    </body>
-</html>
+</div>
+</x-layout>
