@@ -17,11 +17,11 @@
         <title>Find Laravel Jobs & Projects</title>
     </head>
     <body class="mb-48">
-        <x-navbar/>
-        <x-hero/>
+        <x-partials._navbar/>
 <main>
+
 {{$slot}}
 </main>
-  <x-footer/>
+  <x-partials._footer/>
     </body>
 </html>
