@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class ListingController extends Controller
 {
    public function index() {
-        return view('listings', ['listings' => Listing::all()]);
+    
+        return view('listings/index', ['listings' => Listing::latest()->filter(request(['tag']))->get()]);
     }
 
 
     public function oneList (Listing $list) {
-        return view('listing', ['listing' => $list]);
+        return view('listings/show', ['listing' => $list]);
     }
 }
