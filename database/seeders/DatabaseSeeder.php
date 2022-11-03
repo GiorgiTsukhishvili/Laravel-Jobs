@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory(10)->create();
-        Listing::factory(10)->create();
+        Listing::factory(10)->create(['tags' => 'Laravel, Api, BackEnd, Vue']);
     }
 }
