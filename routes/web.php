@@ -18,4 +18,6 @@ Route::get('/', [ListingController::class, 'index']);
 
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+Route::post('/listings/create', [ListingController::class, 'store']);
+
 Route::get('/listings/{list:title}', [ListingController::class, 'oneList']);
