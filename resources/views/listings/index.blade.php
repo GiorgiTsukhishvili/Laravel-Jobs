@@ -8,4 +8,5 @@
             <x-listing-card :listing='$listing' />
         @endforeach
     </div>
+    <x-partials._footer />
 </x-layout>

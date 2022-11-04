@@ -20,7 +20,7 @@
 
         {{ $slot }}
     </main>
-    <x-partials._footer />
+
 </body>
 
 </html>

@@ -37,4 +37,5 @@
             </div>
         </div>
     </div>
+    <x-partials._footer />
 </x-layout>
