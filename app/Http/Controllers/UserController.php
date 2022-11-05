@@ -35,6 +35,14 @@ class UserController extends Controller
 	{
 		auth()->logout();
 
-		return back();
+		request()->session()->invalidate();
+		request()->session()->regenerate();
+
+		return back()->with('message', 'You have been logged out');
+	}
+
+	public function login()
+	{
+		return view('users.login');
 	}
 }

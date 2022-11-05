@@ -25,6 +25,8 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 Route::get('/register', [UserController::class, 'create']);
 
+Route::get('/login', [UserController::class, 'login']);
+
 Route::post('/users', [UserController::class, 'store']);
 
 Route::post('/user/logout', [UserController::class, 'logout']);
