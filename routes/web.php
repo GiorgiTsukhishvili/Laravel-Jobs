@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,5 @@ Route::get('/listings/{list:title}', [ListingController::class, 'oneList']);
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 Route::delete('/listings/{listing}/delete', [ListingController::class, 'delete']);
+
+Route::get('/register', [UserController::class, 'create']);
