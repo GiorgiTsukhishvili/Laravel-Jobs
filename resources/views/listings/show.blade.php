@@ -36,6 +36,12 @@
                 </div>
             </div>
         </div>
+        <div class="mt-4 p-2 flex space-x-6">
+            <a href="/listings/{{ $listing->id }}/edit"
+                class="bg-gray-400 text-white px-3 py-1 text-xl rounded-lg">Edit</a>
+            <a href="/listings/{{ $listing->id }}/delete"
+                class="bg-red-400 text-white px-3 py-1 text-xl rounded-lg">Delete</a>
+        </div>
     </div>
     <x-partials._footer />
 </x-layout>

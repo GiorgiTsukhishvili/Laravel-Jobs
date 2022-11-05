@@ -20,4 +20,10 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 
 Route::post('/listings/create', [ListingController::class, 'store']);
 
+Route::put('/listings/{id}', [ListingController::class, 'update']);
+
 Route::get('/listings/{list:title}', [ListingController::class, 'oneList']);
+
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+Route::get('/listings/{listing}/delete', [ListingController::class, 'delete']);
