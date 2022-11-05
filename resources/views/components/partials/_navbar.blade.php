@@ -7,6 +7,10 @@
                 <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                     Manage Listings</a>
             </li>
+            <form method="POST" action="/user/logout">
+                @csrf
+                <button type="submit">Log out</button>
+            </form>
         @else
             <li>
                 <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>

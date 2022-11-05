@@ -27,6 +27,8 @@ Route::get('/register', [UserController::class, 'create']);
 
 Route::post('/users', [UserController::class, 'store']);
 
+Route::post('/user/logout', [UserController::class, 'logout']);
+
 Route::post('/listings/create', [ListingController::class, 'store']);
 
 Route::put('/listings/{id}', [ListingController::class, 'update']);

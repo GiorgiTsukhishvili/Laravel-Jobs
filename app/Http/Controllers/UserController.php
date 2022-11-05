@@ -30,4 +30,11 @@ class UserController extends Controller
 
 		return redirect('/')->with('message', 'User registered successfully!');
 	}
+
+	public function logout()
+	{
+		auth()->logout();
+
+		return back();
+	}
 }
