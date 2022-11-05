@@ -26,4 +26,4 @@ Route::get('/listings/{list:title}', [ListingController::class, 'oneList']);
 
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
-Route::get('/listings/{listing}/delete', [ListingController::class, 'delete']);
+Route::delete('/listings/{listing}/delete', [ListingController::class, 'delete']);
