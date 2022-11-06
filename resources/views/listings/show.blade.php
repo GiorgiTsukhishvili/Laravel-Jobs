@@ -36,17 +36,21 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 p-2 flex space-x-6">
-            <a href="/listings/{{ $listing->id }}/edit"
-                class="bg-gray-400 text-white px-3 py-1 text-xl rounded-lg">Edit</a>
+        @isset(auth()->user()->id)
+            @if ($listing->user->id === auth()->user()->id)
+                <div class="mt-4 p-2 flex space-x-6">
+                    <a href="/listings/{{ $listing->id }}/edit"
+                        class="bg-gray-400 text-white px-3 py-1 text-xl rounded-lg">Edit</a>
 
-            <form method="POST" action="/listings/{{ $listing->id }}/delete">
-                @csrf
-                @method('delete')
-                <button class="bg-red-400 text-white px-3 py-1 text-xl rounded-lg">Delete</button>
-            </form>
+                    <form method="POST" action="/listings/{{ $listing->id }}/delete">
+                        @csrf
+                        @method('delete')
+                        <button class="bg-red-400 text-white px-3 py-1 text-xl rounded-lg">Delete</button>
+                    </form>
 
-        </div>
+                </div>
+            @endif
+        @endisset
     </div>
     <x-partials._footer />
 </x-layout>

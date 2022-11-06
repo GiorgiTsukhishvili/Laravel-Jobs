@@ -29,7 +29,7 @@ Route::get('/login', [UserController::class, 'login'])->middleware('guest');
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
 
-Route::post('/users', [UserController::class, 'store'])->middleware('auth');
+Route::post('/users', [UserController::class, 'store'])->middleware('guest');
 
 Route::post('/user/logout', [UserController::class, 'logout'])->middleware('auth');
 

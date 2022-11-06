@@ -44,6 +44,8 @@ class ListingController extends Controller
 			->store('logos', 'public');
 		}
 
+		$formFields['user_id'] = auth()->user()->id;
+
 		Listing::create($formFields);
 
 		return redirect('/')->with('message', 'Listing created successfully!');
