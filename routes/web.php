@@ -17,24 +17,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ListingController::class, 'index']);
 
-Route::get('/listings/create', [ListingController::class, 'create']);
+Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
 
 Route::get('/listings/{list:title}', [ListingController::class, 'oneList']);
 
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->middleware('guest');
 
-Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
 
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store'])->middleware('auth');
 
-Route::post('/user/logout', [UserController::class, 'logout']);
+Route::post('/user/logout', [UserController::class, 'logout'])->middleware('auth');
 
-Route::post('/listings/create', [ListingController::class, 'store']);
+Route::post('/listings/create', [ListingController::class, 'store'])->middleware('auth');
 
-Route::put('/listings/{id}', [ListingController::class, 'update']);
+Route::put('/listings/{id}', [ListingController::class, 'update'])->middleware('auth');
 
-Route::delete('/listings/{listing}/delete', [ListingController::class, 'delete']);
+Route::delete('/listings/{listing}/delete', [ListingController::class, 'delete'])->middleware('auth');
